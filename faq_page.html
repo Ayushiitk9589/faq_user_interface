@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; color: #333; }
+        input[type="text"] { width: 100%; padding: 10px; margin: 20px 0; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+        button { display: block; width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+        .faq-section { margin-top: 20px; }
+        .faq-item { margin-bottom: 15px; border: 1px solid #e0e0e0; border-radius: 5px; padding: 10px; }
+        .faq-question { margin: 0; color: #007bff; }
+        .faq-answer { margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="search_query" placeholder="Search FAQs...">
+            <button type="submit">Search</button>
+        </form>
+        
+        {% if question and answer %}
+        <div class="faq-section">
+            <div class="faq-item">
+                <h2 class="faq-question">{{ question }}</h2>
+                <p class="faq-answer">{{ answer }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
