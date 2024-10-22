@@ -21,9 +21,9 @@ This project is a FAQ search application built using Django, leveraging Natural 
 ## Important Files
 
 1. **Search Algorithm**: The search algorithm is implemented in the `backend_final_algo.py` file. This file contains the logic for loading the FAQs, preprocessing the text, and finding relevant FAQs based on user queries.
-   backend_final_algo.py
+   
 2. **User Interface**: The template for the user interface is located in `faq_page.html`. This file defines the layout and design of the FAQ search page.
-   faq_page.html
+  
 
 
  
